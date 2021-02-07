@@ -1,0 +1,212 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600&display=swap');
+
+:root {
+    --violet: hsl(263, 55%, 52%);
+    --dark-grayish-blue: hsl(217, 19%, 35%);
+    --blackish-blue: hsl(219, 29%, 14%);
+    --light-gray: hsl(0, 0%, 81%);
+    --light-grayish-blue: hsl(210, 46%, 95%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--light-grayish-blue);
+    font-size: 13px;
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    display: grid;
+}
+
+.container {
+    margin: 4.4375rem 1.5rem;
+}
+
+.container--box {
+    padding: 1.5rem 2rem;
+    border-radius: 0.5rem;
+    margin-bottom: 1.5625rem;
+    box-shadow: 3.125rem 3.125rem 3.75rem rgba(0, 0, 0, 0.1);
+}
+
+.container--highlight {
+    font-size: 1.25rem;
+    position: relative;
+    margin-bottom: 1rem;
+}
+
+/* Used with most elements */
+.container__profile {
+    margin-bottom: 0.6875rem;
+}
+
+.container__profile-name {
+    display: inline-block;
+    position: relative;
+    top: -0.25rem;
+}
+
+.container__profile-name h2 {
+    font-size: 0.8125rem;
+    font-weight: 300;
+}
+
+.container__profile-name p {
+    opacity: 0.5;
+    font-size: 0.6875rem;
+}
+
+.container__profile-img {
+    width: 2rem;
+    margin-right: 0.75rem;
+    border-radius: 50%;
+}
+
+.container__review p:last-of-type{
+    opacity: 0.7;
+    line-height: 1.125rem;
+    margin-bottom: 0.625rem;
+}
+/* End */
+
+.container__box-one {
+    color: var(--light-gray);
+    background-color: var(--violet);
+    position: relative;
+}
+
+.container__box-one-quote {
+    position: absolute;
+    top: 0;
+    right: 1.5625rem;
+}
+
+.container__box-one .container__profile-img {
+    border: 0.125rem solid rgba(207, 207, 207, 0.5);
+}
+
+.container__box-one .container--highlight {
+    color: hsl(0, 0%, 100%);
+    padding-right: 0.25rem;
+}
+
+.container__box-one p:last-of-type {
+    padding-right: 0.8125rem;
+}
+
+.container__box-two {
+    color: var(--light-grayish-blue);
+    background-color: var(--dark-grayish-blue);
+}
+
+.container__box-two .container__profile-img {
+    border: 0.125rem solid var(--dark-grayish-blue);
+}
+
+.container__box-three,
+.container__box-five {
+    color: var(--blackish-blue);
+    background-color: hsl(0, 0%, 100%);
+}
+
+.container__box-three .container__profile-img,
+.container__box-five .container__profile-img {
+    border: 0.125rem solid hsl(0, 0%, 100%);
+}
+
+.container__box-three .container--highlight,
+.container__box-five .container--highlight {
+    font-weight: 700;
+    opacity: 0.9;
+}
+
+.container__box-four {
+    color:hsl(0, 0%, 100%);
+    background-color: var(--blackish-blue);
+}
+
+.container__box-four .container__profile-img {
+    border: 0.125rem solid var(--violet);
+}
+
+@media (min-width: 31.25rem) {
+    .container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 0 1.875rem;
+        grid-template-areas: 
+            "b1 b1"
+            "b2 b5"
+            "b3 b5"
+            "b4 b4";
+    }
+
+    .container__box-one {
+        grid-area: b1;
+    }
+    
+    .container__box-two {
+        grid-area: b2;
+    }
+
+    .container__box-three {
+        grid-area: b3;
+    }
+
+    .container__box-four {
+        grid-area: b4;
+    }
+
+    .container__box-five {
+        grid-area: b5;
+    }
+
+}
+
+@media (min-width: 50rem) {
+    .container {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-areas: 
+            "b1 b1 b5"
+            "b2 b2 b5"
+            "b3 b4 b4";
+    }
+}
+
+@media (min-width: 68.75rem) {
+    .container {
+        max-width: 69.5rem;
+        margin: 10.1875rem auto;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-areas: 
+            "b1 b1 b2 b5"
+            "b3 b4 b4 b5";      
+    }
+
+    .container__box-one-quote {
+        right: 5.5625rem;
+    }
+
+    .container__box-one {
+        padding: 1.5rem 1.875rem;
+    }
+
+    .container__box-four {
+        padding: 1.5rem 2.125rem;
+    }
+
+    .container__box-three .container--highlight,
+    .container__box-four .container--highlight,
+    .container__box-five .container--highlight {
+        margin-bottom: 1.5625rem;
+    }
+
+    .container__box-three p:last-of-type,
+    .container__box-four p:last-of-type,
+    .container__box-five p:last-of-type {
+        margin-bottom: 0;
+    }
+}
